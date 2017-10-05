@@ -6,15 +6,12 @@ gulp.task('default');
 gulp.task('browserSync', function() {
   browserSync.init({
       server: {
-        baseDir: 'app',
+        baseDir: 'docs',
         index: 'index.html'
       },
   });
 });
 
 gulp.task('serve',['browserSync'], function() {
-  gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/*.css', browserSync.reload);
-  gulp.watch('app/*.js', browserSync.reload);
-
+  gulp.watch('docs/*', browserSync.reload);
 })
