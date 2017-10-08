@@ -1,11 +1,22 @@
 h4 {
-   display:inline-block;
-   align-items: center;
-   max-width: 200px;
-   min-width: 200px;
+  margin-right: -5px;
+  font-family: "Roboto Mono", Times, serif;
+  font-size: 14px;
+  display:inline-block;
+  align-items: center;
+  max-width: 200px;
+  min-width: 200px;
+  max-height: 200px;
+  min-height: 200px;
+  z-index: 900;
+
+}
+.svg{
+  z-index: 950;
 
 }
 .grid{
   position: fixed;
+  padding-top: 3%;
   padding-left: 5%;
 }
