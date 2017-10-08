@@ -4,28 +4,26 @@
   d3.json("BehaviorAppropriatenessMeanData.json", function (data)
   {
 
-
-    makeCircles("run", "#FF8A80");
-    makeCircles("talk", "#69F0AE");
-    makeCircles("kiss", "#FF80AB");
-    makeCircles("write", "#EA80FC");
-    makeCircles("eat", "#B388FF");
-    makeCircles("sleep", "#8C9EFF");
-    makeCircles("mumble", "#82B1FF");
-    makeCircles("read", "#80D8FF");
-    makeCircles("fight", "#84FFFF");
-    makeCircles("belch", "#A7FFEB");
-    makeCircles("argue", "#B9F6CA");
-    makeCircles("jump", "#CCFF90");
-    makeCircles("cry", "#FFD180");
-    makeCircles("laugh", "#FF9E80");
-    makeCircles("shout", "#8D6E63");
-
+    chart("talk", "#69F0AE");
+    chart("laugh", "#FF9E80");
+    chart("eat", "#B388FF");
+    chart("read", "#80D8FF");
+    chart("kiss", "#FF80AB");
+    chart("write", "#EA80FC");
+    chart("mumble", "#82B1FF");
+    chart("cry", "#FFD180");
+    chart("argue", "#B9F6CA");
+    chart("jump", "#CCFF90");
+    chart("sleep", "#8C9EFF");
+    chart("shout", "#8D6E63");
+    chart("run", "#FF8A80");
+    chart("belch", "#A7FFEB");
+    chart("fight", "#84FFFF");
 
 
-
-    function makeCircles( category, color, locationx, locationy) {
-
+    function chart( category, color,) {
+      var width = 200;
+      var height = 200;
       var cat = category;
       var fill_color = color;
 
@@ -41,17 +39,19 @@
         .force("xforce", forcex)
         .force("yforce", forcey)
         .force("collisions", d3.forceCollide(function(d){
-          return((checker(cat, d) * 2) + 2)
+          return((checker(cat, d) * 2) + 1)
         }))
 
-        var width = 200;
-        var height = 200;
-        var svg = d3.select("#grid")
-          .append("svg")
-          .attr("height", height)
-          .attr("width", width)
-          .append("g")
-          .attr("transform", "translate(0,0)")
+      var svg = d3.select("#grid")
+        .append("h4")
+        .text(cat)
+        .append("svg")
+        .attr("height", height)
+        .attr("width", width)
+        .append("g")
+        .attr("transform", "translate(0,0)")
+
+
       sim.nodes(data)
         .on('tick', updateXY)
 
@@ -77,7 +77,6 @@
             return d.y
           })
       }
-
     }
 
 
@@ -134,6 +133,5 @@
     }
 
   })
-
 
 })();

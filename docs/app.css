@@ -1,0 +1,11 @@
+h4 {
+   display:inline-block;
+   align-items: center;
+   max-width: 200px;
+   min-width: 200px;
+
+}
+.grid{
+  position: fixed;
+  padding-left: 5%;
+}
