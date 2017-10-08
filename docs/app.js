@@ -48,9 +48,6 @@
         .append("svg")
         .attr("height", height)
         .attr("width", width)
-        .append("g")
-        .attr("transform", "translate(0,0)")
-
 
       sim.nodes(data)
         .on('tick', updateXY)
@@ -63,7 +60,6 @@
           .attr("fill", fill_color)
           .attr("cx", 300)
           .attr("cy", 300)
-          //make the radius the mean * 10
           .attr("r", function(d) {
             return checker(cat, d) * 2;
           })
@@ -128,7 +124,6 @@
       }
       else {
         console.log("error");
-
       }
     }
 
