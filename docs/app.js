@@ -4,21 +4,21 @@
   d3.json("BehaviorAppropriatenessMeanData.json", function (data)
   {
 
-    chart("talk", "#FF8A80");
-    chart("laugh", "#FF80AB");
-    chart("eat", "#EA80FC");
-    chart("read", "#B388FF");
-    chart("kiss", "#8C9EFF");
-    chart("write", "#82B1FF");
-    chart("mumble", "#80D8FF");
-    chart("cry", "#84FFFF");
-    chart("argue", "#A7FFEB");
-    chart("jump", "#B9F6CA");
-    chart("sleep", "#CCFF90");
-    chart("shout", "#FFF176");
-    chart("run", "#FFE57F");
-    chart("belch", "#FFD180");
-    chart("fight", "#FF9E80");
+    chart("talk", "#FF9E80");
+    chart("laugh", "#FF8A80");
+    chart("eat", "#FF80AB");
+    chart("read", "#EA80FC");
+    chart("kiss", "#B388FF");
+    chart("write", "#8C9EFF");
+    chart("mumble", "#82B1FF");
+    chart("cry", "#80D8FF");
+    chart("argue", "#84FFFF");
+    chart("jump", "#A7FFEB");
+    chart("sleep", "#B9F6CA");
+    chart("shout", "#CCFF90");
+    chart("run", "#FFF176");
+    chart("belch", "#FFE57F");
+    chart("fight", "#FFD180");
 
 
     function chart( category, color,) {
