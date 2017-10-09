@@ -88,7 +88,7 @@
               return checker(cat, d) * 2.3;
             })
             .on("mouseover", function(d, i){
-              handleMouseOver(returnPlace(i));
+              handleMouseOver(d, returnPlace(i), cat);
             })
             .on("mouseout", function(d, i){
               handleMouseOut(returnPlace(i));
@@ -173,9 +173,9 @@
 
     }
 
-    function handleMouseOver(i) {  // Add interactivity
+    function handleMouseOver(d, i, y) {  // Add interactivity
       // Use D3 to select element, change color and size
-      tooltip.select(".label").html(i);
+      tooltip.select(".label").html(i + ":\xa0" + checker(y,d));
       tooltip.style("display","block");
       d3.selectAll("#"+i).attr("fill","black");
 
