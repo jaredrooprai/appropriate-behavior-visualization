@@ -22,21 +22,21 @@
     var fight_color = "#FFD180"
 
 
-    chart("talk", talk_color);
-    chart("laugh", laugh_color);
-    chart("eat", eat_color);
-    chart("read",read_color);
-    chart("kiss", kiss_color);
-    chart("write", write_color);
-    chart("mumble", mumble_color);
-    chart("cry", cry_color);
-    chart("argue", argue_color);
-    chart("jump", jump_color);
-    chart("sleep", sleep_color);
-    chart("shout", shout_color);
-    chart("run", run_color);
-    chart("belch", belch_color);
-    chart("fight", fight_color);
+    chart("talking", talk_color);
+    chart("laughing", laugh_color);
+    chart("eating", eat_color);
+    chart("reading",read_color);
+    chart("kissing", kiss_color);
+    chart("writing", write_color);
+    chart("mumbling", mumble_color);
+    chart("crying", cry_color);
+    chart("arguing", argue_color);
+    chart("jumping", jump_color);
+    chart("sleeping", sleep_color);
+    chart("shouting", shout_color);
+    chart("running", run_color);
+    chart("belching", belch_color);
+    chart("fighting", fight_color);
 
 
     function chart( category, color,) {
@@ -183,21 +183,21 @@
 
     function handleMouseOut(i) {  // Add interactivity
       // Use D3 to select element, change color and size
-      d3.selectAll(".talk").attr("fill",talk_color);
-      d3.selectAll(".laugh").attr("fill",laugh_color);
-      d3.selectAll(".eat").attr("fill",eat_color);
-      d3.selectAll(".read").attr("fill",read_color);
-      d3.selectAll(".kiss").attr("fill",kiss_color);
-      d3.selectAll(".write").attr("fill",write_color);
-      d3.selectAll(".mumble").attr("fill",mumble_color);
-      d3.selectAll(".cry").attr("fill",cry_color);
-      d3.selectAll(".argue").attr("fill",argue_color);
-      d3.selectAll(".jump").attr("fill",jump_color);
-      d3.selectAll(".sleep").attr("fill",sleep_color);
-      d3.selectAll(".shout").attr("fill",shout_color);
-      d3.selectAll(".run").attr("fill",run_color);
-      d3.selectAll(".belch").attr("fill",belch_color);
-      d3.selectAll(".fight").attr("fill",fight_color);
+      d3.selectAll(".talking").attr("fill",talk_color);
+      d3.selectAll(".laughing").attr("fill",laugh_color);
+      d3.selectAll(".eating").attr("fill",eat_color);
+      d3.selectAll(".reading").attr("fill",read_color);
+      d3.selectAll(".kissing").attr("fill",kiss_color);
+      d3.selectAll(".writing").attr("fill",write_color);
+      d3.selectAll(".mumbling").attr("fill",mumble_color);
+      d3.selectAll(".crying").attr("fill",cry_color);
+      d3.selectAll(".arguing").attr("fill",argue_color);
+      d3.selectAll(".jumping").attr("fill",jump_color);
+      d3.selectAll(".sleeping").attr("fill",sleep_color);
+      d3.selectAll(".shouting").attr("fill",shout_color);
+      d3.selectAll(".running").attr("fill",run_color);
+      d3.selectAll(".belching").attr("fill",belch_color);
+      d3.selectAll(".fighting").attr("fill",fight_color);
       tooltip.style("display","none");
 
     }
@@ -208,50 +208,50 @@
     }
 
     function checker(cat, d) {
-      if (cat == "run"){
-        return d.run;
+      if (cat == "running"){
+        return d.running;
       }
-      else if (cat == "talk"){
-        return d.talk
+      else if (cat == "talking"){
+        return d.talking
       }
-      else if (cat == "kiss"){
-        return d.kiss
+      else if (cat == "kissing"){
+        return d.kissing
       }
-      else if (cat == "write"){
-        return d.write
+      else if (cat == "writing"){
+        return d.writing
       }
-      else if (cat == "eat"){
-        return d.eat
+      else if (cat == "eating"){
+        return d.eating
       }
-      else if (cat == "sleep"){
-        return d.sleep
+      else if (cat == "sleeping"){
+        return d.sleeping
       }
-      else if (cat == "mumble"){
-        return d.mumble
+      else if (cat == "mumbling"){
+        return d.mumbling
       }
-      else if (cat == "read"){
-        return d.read
+      else if (cat == "reading"){
+        return d.reading
       }
-      else if (cat == "fight"){
-        return d.fight
+      else if (cat == "fighting"){
+        return d.fighting
       }
-      else if (cat == "belch"){
-        return d.belch
+      else if (cat == "belching"){
+        return d.belching
       }
-      else if (cat == "argue"){
-        return d.argue
+      else if (cat == "arguing"){
+        return d.arguing
       }
-      else if (cat == "jump"){
-        return d.jump
+      else if (cat == "jumping"){
+        return d.jumping
       }
-      else if (cat == "cry"){
-        return d.cry
+      else if (cat == "crying"){
+        return d.crying
       }
-      else if (cat == "laugh"){
-        return d.laugh
+      else if (cat == "laughing"){
+        return d.laughing
       }
-      else if (cat == "shout"){
-        return d.shout
+      else if (cat == "shouting"){
+        return d.shouting
       }
       else {
         console.log("error");
