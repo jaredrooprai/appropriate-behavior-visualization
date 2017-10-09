@@ -57,7 +57,7 @@
           .force("xforce", forcex)
           .force("yforce", forcey)
           .force("collisions", d3.forceCollide(function(d){
-            return((checker(cat, d) * 2) + 1)
+            return((checker(cat, d) * 2.3) + 1)
           }))
 
         var svg = d3.select("#grid")
@@ -69,11 +69,6 @@
           .append("svg")
           .attr("height", height)
           .attr("width", width)
-
-          // Define the div for the tooltip
-        var div = d3.select("body").append("div")
-          .attr("class", "tooltip")
-          .style("opacity", 0);
 
         sim.nodes(data)
           .on('tick', updateXY)
@@ -90,7 +85,7 @@
             .attr("cx", 300)
             .attr("cy", 300)
             .attr("r", function(d) {
-              return checker(cat, d) * 2;
+              return checker(cat, d) * 2.3;
             })
             .on("mouseover", function(d, i){
               handleMouseOver(returnPlace(i));
@@ -98,8 +93,9 @@
             .on("mouseout", function(d, i){
               handleMouseOut(returnPlace(i));
             })
-
-
+            .on("mousemove", function(d,i){
+              handleMouseMove(i);
+            })
 
         function updateXY() {
           circles
@@ -112,51 +108,64 @@
         }
     }
 
+    var tooltip = d3.select("#grid")
+      .append("div")
+      .attr("class", "tooltip");
+
+    tooltip.append("div")
+      .attr("class", "label");
+
+    tooltip.append("div")
+      .attr("class", "count");
+
+    tooltip.append("div")
+      .attr("class","percent");
+
     function returnPlace(i){
       if (i == 0){
-        return "class";
+        return "in\xa0class";
       }
       else if (i == 1){
-        return "date";
+        return "at\xa0a\xa0date";
       }
       else if (i == 2){
-        return "bus";
+        return "in\xa0a\xa0bus";
       }
       else if (i == 3){
-        return "family_dinner";
+        return "at\xa0a\xa0family\xa0dinner";
       }
       else if (i == 4){
-        return "park";
+        return "at\xa0a\xa0park";
       }
       else if (i == 5){
-        return "church";
+        return "in\xa0church";
       }
       else if (i == 6){
-        return "job_interview";
+        return "at\xa0a\xa0job\xa0interview";
       }
       else if (i == 7){
-        return "sidewalk";
+        return "on\xa0the\xa0sidewalk";
       }
       else if (i == 8){
-        return "movies";
+        return "at\xa0the\xa0movies";
       }
       else if (i == 9){
-        return "bar";
+        return "at\xa0the\xa0bar";
       }
       else if (i == 10){
-        return "elevator";
+        return "in\xa0an\xa0elevator";
       }
       else if (i == 11){
-        return "restroom";
+        return "in\xa0a\xa0restroom";
       }
       else if (i == 12){
-        return "own_room";
+        return "in\xa0your\xa0own\xa0room";
       }
       else if (i == 13){
-        return "dorm_lounge";
+        return "in\xa0a\xa0dorm\xa0lounge";
       }
       else if (i == 14){
-        return "football_game";
+        return "at\xa0a\xa0football\xa0game";
       }
       else {
         console.log("error");
@@ -166,7 +175,10 @@
 
     function handleMouseOver(i) {  // Add interactivity
       // Use D3 to select element, change color and size
+      tooltip.select(".label").html(i);
+      tooltip.style("display","block");
       d3.selectAll("#"+i).attr("fill","black");
+
     }
 
     function handleMouseOut(i) {  // Add interactivity
@@ -186,6 +198,13 @@
       d3.selectAll(".run").attr("fill",run_color);
       d3.selectAll(".belch").attr("fill",belch_color);
       d3.selectAll(".fight").attr("fill",fight_color);
+      tooltip.style("display","none");
+
+    }
+
+    function handleMouseMove(i){
+      tooltip.style('top', (d3.event.layerY + 10) + 'px')
+      .style('left', (d3.event.layerX + 10) + 'px');
     }
 
     function checker(cat, d) {
