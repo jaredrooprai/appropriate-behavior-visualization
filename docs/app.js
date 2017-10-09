@@ -115,8 +115,6 @@
     tooltip.append("div")
       .attr("class", "label");
 
-    tooltip.append("div")
-      .attr("class", "count");
 
     tooltip.append("div")
       .attr("class","percent");
