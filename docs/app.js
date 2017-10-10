@@ -1,4 +1,3 @@
-// Pleause don't laugh at my hardcoded checkers. I literally don't know javascirpt and couldn't figure out how to not use them ._.
 (function () {
 
   // import data from json
